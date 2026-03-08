@@ -263,20 +263,22 @@
         .section-proof .section-title { text-align: center; }
 
         .stats-row {
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 190px));
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 0;
-            margin: 48px auto 0;
+            margin: 48px 0 0;
+            border-top: 1px solid rgba(0,0,0,0.07);
+            border-bottom: 1px solid rgba(0,0,0,0.07);
         }
 
         .stat-card {
-            padding: 32px 20px;
+            flex: 0 0 180px;
+            padding: 32px 16px;
             text-align: center;
-            border-left: 1px solid rgba(0,0,0,0.08);
-            position: relative;
+            border-right: 1px solid rgba(0,0,0,0.08);
         }
-        .stat-card:last-child { border-left: none; }
+        .stat-card:last-child { border-right: none; }
 
         .stat-number {
             font-size: clamp(34px, 4vw, 52px);
@@ -405,12 +407,9 @@
             font-weight: 700;
             color: var(--blue-dark);
         }
-        @media (max-width: 1100px) {
-            .stats-row { grid-template-columns: repeat(3, minmax(0, 190px)); }
-        }
         @media (max-width: 900px) {
             .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-            .stats-row { grid-template-columns: repeat(2, minmax(0, 190px)); }
+            .stat-card { flex: 0 0 45%; }
         }
         @media (max-width: 600px) {
             .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -576,8 +575,9 @@
             .article-figure .fig-title { font-size: 13px; }
             section { padding: 60px 16px; }
             .container { padding: 0 16px; }
-            .stats-row { grid-template-columns: 1fr; }
-            .stats-dark-bar { padding: 32px 16px; }
+            .stats-row { flex-direction: column; }
+            .stat-card { flex: 1 1 auto; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.07); }
+            .stat-card:last-child { border-bottom: none; }
             .amounts-grid { grid-template-columns: 1fr; }
             .amount-card-wide { grid-column: span 1; }
             .testimonial-card { flex-direction: column; gap: 16px; padding: 24px 20px; }
@@ -672,7 +672,7 @@
             <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%203.jpeg" alt="ברוך השם, דנה ניצלה">
             <figcaption>
                 <span class="fig-title">ברוך השם, דנה ניצלה</span>
-                שבועיים לא עזבנו אותה. לא עצמנו עין. הצלת חיים - זה מה שאנחנו עושים פה בסוף העולם.
+                שב��עיים לא עזבנו אותה. לא עצמ��ו עין. הצלת חיים - זה מה שאנחנו עושים פה בסוף העולם.
             </figcaption>
         </figure>
 
@@ -755,30 +755,32 @@
     <div class="container">
         <div class="eyebrow">התוצאות בשטח</div>
         <h2 class="section-title">5 שנים של עשייה אמיתית — המספרים מדברים בעד עצמם</h2>
+    </div>
 
-        <div class="stats-row">
-            <div class="stat-card">
-                <div class="stat-number">15,600+</div>
-                <div class="stat-label">לוחמים ומטיילים שזכו לבית חם ומחבק בקצה העולם במהלך 5 השנים האחרונות</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">31,200</div>
-                <div class="stat-label">סעודות ביתיות שהוגשו באהבה ובשפע, ונתנו טעם של בית וביטחון לכל לוחם ולוחמת</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">260</div>
-                <div class="stat-label">שבתות רצופות שבהן האור בבית חב"ד לא כבה מעולם, שבוע אחר שבוע, שנה אחר שנה</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">5,000+</div>
-                <div class="stat-label">רגעי חיבור של הנחת תפילין, שיחות נפש וייעוץ רגשי ללוחמים משוחררים ונופשים</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">מענה לכל צורך — מעזרה רפואית ועד איתור וסיוע במצבי חירום עבור המטיילים והוריהם בארץ</div>
-            </div>
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="stat-number">15,600+</div>
+            <div class="stat-label">לוחמים ומטיילים שזכו לבית חם ומחבק בקצה העולם במהלך 5 השנים האחרונות</div>
         </div>
+        <div class="stat-card">
+            <div class="stat-number">31,200</div>
+            <div class="stat-label">סעודות ביתיות שהוגשו באהבה ובשפע, ונתנו טעם של בית וביטחון לכל לוחם ולוחמת</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">260</div>
+            <div class="stat-label">שבתות רצופות שבהן האור בבית חב"ד לא כבה מעולם, שבוע אחר שבוע, שנה אחר שנה</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5,000+</div>
+            <div class="stat-label">רגעי חיבור של הנחת תפילין, שיחות נפש וייעוץ רגשי ללוחמים משוחררים ונופשים</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">מענה לכל צורך — מעזרה רפואית ועד איתור וסיוע במצבי חירום עבור המטיילים והוריהם בארץ</div>
+        </div>
+    </div>
 
+    <div class="container">
         <div class="progress-block">
             <div class="progress-meta">
                 <span>יעד הקמפיין תשפ"ו</span>
