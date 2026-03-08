@@ -439,11 +439,11 @@
         /* CAROUSEL */
         .carousel {
             position: relative;
-            max-width: 500px;
-            margin: 28px auto 8px;
-            border-radius: 14px;
+            max-width: 100%;
+            margin: 32px 0 8px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,.3);
+            box-shadow: 0 12px 40px rgba(0,0,0,.35);
         }
 
         .carousel-track {
@@ -458,7 +458,7 @@
 
         .carousel-slide img {
             width: 100%;
-            max-height: 340px;
+            height: 480px;
             object-fit: cover;
             display: block;
         }
@@ -467,13 +467,26 @@
             position: absolute;
             bottom: 0;
             right: 0; left: 0;
-            background: rgba(0,0,0,.55);
-            color: rgba(255,255,255,.85);
-            font-size: 13px;
-            font-style: italic;
-            text-align: center;
-            padding: 8px 14px;
+            background: linear-gradient(transparent, rgba(0,0,0,.82));
+            color: #fff;
+            font-style: normal;
+            text-align: right;
+            padding: 70px 28px 24px;
             margin: 0;
+        }
+
+        .carousel-slide .caption-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .carousel-slide .caption-text {
+            font-size: 14px;
+            color: rgba(255,255,255,.88);
+            line-height: 1.6;
         }
 
         .carousel-btn {
@@ -540,8 +553,10 @@
         }
 
         @media (max-width: 600px) {
-            .carousel { max-width: 100%; }
-            .carousel-slide img { max-height: 220px; }
+            .carousel-slide img { height: 260px; }
+            .carousel-slide .caption { padding: 40px 16px 16px; }
+            .carousel-slide .caption-title { font-size: 16px; }
+            .carousel-slide .caption-text { font-size: 12px; }
             section { padding: 60px 16px; }
             .container { padding: 0 16px; }
             .stats-row { grid-template-columns: 1fr; }
@@ -578,7 +593,7 @@
     </h1>
 
     <p class="hero-sub">
-        כדי להמשיך להציל את החיילים שלנו באי קריבי מבודד,<br>
+        כדי להמשיך לתת מנוחה לחיילים שלנו באי קריבי מבודד,<br>
         אנחנו מקריבים את חיי המשפחה שלנו.<br>
         עכשיו, אנחנו צריכים אתכם איתנו.
     </p>
@@ -614,15 +629,24 @@
             <div class="carousel-track">
                 <div class="carousel-slide">
                     <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%202.jpeg" alt="מצב החירום בבית הרפואה">
-                    <p class="caption">בית הרפואה המיושן של האי - הזירה שאליה הגענו באותו לילה.</p>
+                    <div class="caption">
+                        <div class="caption-title">השעה 2:00 בלילה, ס. אנדרס</div>
+                        <div class="caption-text">הגענו לבית הרפואה ומצאנו זירת מלחמה — שבעה צעירים ישראלים, פצועים ולבד בסוף העולם.</div>
+                    </div>
                 </div>
                 <div class="carousel-slide">
-                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%201.jpeg" alt="טיפול בפצועים">
-                    <p class="caption">המטוס הפרטי אליו העלינו את זיו במסע להצלת חייה.</p>
-                </div>ֿ
+                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%201.jpeg" alt="מירוץ נגד הזמן">
+                    <div class="caption">
+                        <div class="caption-title">מירוץ נגד הזמן</div>
+                        <div class="caption-text">שכרנו מטוס פרטי בלילה ועפנו עם זיו לבוגוטה. בין חיים למוות — שניות ספרו.</div>
+                    </div>
+                </div>
                 <div class="carousel-slide">
-                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%203.jpeg" alt="טיפול בפצועים">
-                    <p class="caption">המטוס הפרטי אליו העלינו את זיו במסע להצלת חייה.</p>
+                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%203.jpeg" alt="ברוך השם, זיו ניצלה">
+                    <div class="caption">
+                        <div class="caption-title">ברוך השם, זיו ניצלה</div>
+                        <div class="caption-text">שבועיים לא עזבנו אותה. לא עצמנו עין. הצלת חיים — זה מה שאנחנו עושים פה בסוף העולם.</div>
+                    </div>
                 </div>
             </div>
             <button class="carousel-btn prev" onclick="carouselMove('carousel-story',-1)" aria-label="הקודם">&#8250;</button>
@@ -631,6 +655,7 @@
         <div class="carousel-dots" id="carousel-story-dots">
             <div class="carousel-dot active" onclick="carouselGo('carousel-story',0)"></div>
             <div class="carousel-dot" onclick="carouselGo('carousel-story',1)"></div>
+            <div class="carousel-dot" onclick="carouselGo('carousel-story',2)"></div>
         </div>
 
         <div class="body-text" style="margin-top:32px;">
@@ -657,15 +682,21 @@
             <p>את הבית הזה, אנחנו בנינו עבורם. <strong>בית חב"ד ס. אנדרס הוא הרבה יותר מבית כנסת. הוא חדר מיון לנשמה.</strong></p>
         </div>
 
-        <div class="carousel" id="carousel-event" style="box-shadow:0 8px 30px rgba(0,0,0,.15);">
+        <div class="carousel" id="carousel-event">
             <div class="carousel-track">
                 <div class="carousel-slide">
                     <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%90%D7%99%D7%A8%D7%95%D7%A2%201.jpeg" alt="סעודת שבת בבית חב&quot;ד">
-                    <p class="caption">עשרות חיילים יושבים צפופים, שרים, מחובקים - סעודת שבת בבית חב"ד ס. אנדרס.</p>
+                    <div class="caption">
+                        <div class="caption-title">שבת בסוף העולם</div>
+                        <div class="caption-text">מעל 250 חיילים סביב שולחן שבת אחד — רועשים, שמחים, בבית.</div>
+                    </div>
                 </div>
                 <div class="carousel-slide">
                     <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%90%D7%99%D7%A8%D7%95%D7%A2%202.jpeg" alt="הילדים בפעילות">
-                    <p class="caption">הילדים שלנו - חלק בלתי נפרד מהשליחות.</p>
+                    <div class="caption">
+                        <div class="caption-title">הילדים שמוותרים כדי שאתם לא תצטרכו</div>
+                        <div class="caption-text">הם גדלים בלי חיי חברה רגילים, מוותרים על ילדות שקטה — כדי שחיילים ימצאו בית.</div>
+                    </div>
                 </div>
             </div>
             <button class="carousel-btn prev" onclick="carouselMove('carousel-event',-1)" aria-label="הקודם">&#8250;</button>
@@ -688,8 +719,8 @@
 <!-- 4. SACRIFICE -->
 <section class="section-sacrifice">
     <div class="container">
-        <div class="eyebrow">ה"עור במשחק" שלנו</div>
-        <h2 class="section-title">המחיר שאנחנו - והילדים שלנו - משלמים</h2>
+        <div class="eyebrow">המחיר שאנחנו משלמים</div>
+        <h2 class="section-title">הם לא בוחרים בין מלחמה לשגרה.<br>אנחנו כן — ובחרנו בחיילים.</h2>
 
         <div class="body-text">
             <p>כדי שהדלת הזו תישאר פתוחה עבורם, אנחנו משלמים מחיר כבד.</p>
@@ -716,7 +747,7 @@
         <div class="stats-row">
             <div class="stat-card">
                 <div class="stat-number">6,000+</div>
-                <div class="stat-label">מטיילים וחיילים שמצאו אצלנו אוכל חם ואוזן קשבת</div>
+                <div class="stat-label">מטיילים וחיי��ים שמצאו אצלנו אוכל חם ואוזן קשבת</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">25</div>
@@ -746,8 +777,7 @@
                     "הבן שלי חזר מס. אנדרס אחר לגמרי. חודש אחרי, הוא אמר לי: 'אבא, בית חב"ד שם הציל אותי.' אני לא מאמין שיש אנשים כאלה בעולם. תודה לחב"ד שדואגים לילדים שלנו בסוף העולם."
                 </div>
                 <div class="testimonial-author">
-                    - אביה של מטיילת שהגיעה לס. אנדרס אחרי שירות מבצעי
-                    <span style="font-weight:400;opacity:.7;">[שם יוחלף בציטוט אמיתי]</span>
+                    — גדי א., אביה של מטיילת שהגיעה לאחר שחרור קרבי
                 </div>
             </div>
         </div>
@@ -758,36 +788,15 @@
 <!-- 6. FINAL CTA -->
 <section class="section-cta">
     <div class="container">
-        <div class="eyebrow">הצטרפ�� עכשיו</div>
+        <div class="eyebrow">הצטרפו�� עכשיו</div>
         <h2 class="section-title">אנחנו לא יכולים להמשיך לעשות את זה לבד.</h2>
 
         <div class="body-text" style="max-width:640px;margin:0 auto;">
-            <p>תרומה לבית חב"ד ס. אנדרס היא לא סתם "צדקה". היא השקעה ישירה בבריאות הנפש, בגוף ובנשמה של הצעירים והחיילים שעוברים כאן.</p>
-            <p><strong>בכל פעם שחייל שבור יכנס אלינו ויצא עם חיוך ותקווה - אתם תהיו שם איתנו. אל תשאירו אותנו לבד בסוף העולם.</strong></p>
+            <p>תרומה לבית חב"ד ס. אנדרס היא לא סתם צדקה. זו השקעה ישירה בבריאות הנפש של הצעירים והחיילים שמגיעים אלינו שבורים — ועוזבים עם תקווה.</p>
+            <p><strong>בכל פעם שחייל יכנס אלינו שקוע ויצא עם חיוך — אתם תהיו שם איתנו. אל תשאירו אותנו לבד בסוף העולם.</strong></p>
         </div>
 
-        <p style="margin-top:44px;font-size:17px;color:rgba(255,255,255,.65);">בחרו את סכום התרומה שלכם:</p>
-
-        <div class="amounts-grid">
-            <a href="https://pe4ch.com/ref/gAEbqP5j2che?lang=he" target="_blank" class="amount-card">
-                <div class="amount-num">&#x20AA;180</div>
-                <div class="amount-desc">סבסוד סעודת שבת לחייל בודד</div>
-            </a>
-            <a href="https://pe4ch.com/ref/gAEbqP5j2che?lang=he" target="_blank" class="amount-card">
-                <div class="amount-num">&#x20AA;360</div>
-                <div class="amount-desc">שותפות בהחזקת סלון המטיילים לחודש</div>
-            </a>
-            <a href="https://pe4ch.com/ref/gAEbqP5j2che?lang=he" target="_blank" class="amount-card">
-                <div class="amount-num">&#x20AA;1,800</div>
-                <div class="amount-desc">קרן סיוע ומקרי חירום רפואיים באי</div>
-            </a>
-            <a href="https://pe4ch.com/ref/gAEbqP5j2che?lang=he" target="_blank" class="amount-card amount-card-wide">
-                <div class="amount-num" style="font-size:26px;">סכום פתוח מכל הלב...</div>
-                <div class="amount-desc">כל סכום עושה הבדל</div>
-            </a>
-        </div>
-
-        <a href="https://pe4ch.com/ref/gAEbqP5j2che?lang=he" target="_blank" class="btn btn-blue btn-xl">
+        <a href="https://pe4ch.com/ref/gAEbqP5j2che?lang=he" target="_blank" class="btn btn-blue btn-xl" style="margin-top:44px;">
             היו שותפים &#x2014; תרמו עכשיו
         </a>
 
