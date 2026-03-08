@@ -33,15 +33,12 @@
             background-color: #fff;
         }
 
-        /* Fixed background that works on iOS Safari */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+        /* Background image on html element for cross-browser mix-blend-mode support */
+        html {
             background-image: url('https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%97%D7%99%D7%99%D7%9C%20%D7%95%D7%A8%D7%91.jpeg');
             background-size: cover;
             background-position: center center;
-            z-index: -1;
+            background-attachment: fixed;
         }
 
         img { display: block; max-width: 100%; }
@@ -134,7 +131,6 @@
             padding: 60px 20px 80px;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-logo {
@@ -142,6 +138,7 @@
             max-width: 82vw;
             margin-bottom: 44px;
             mix-blend-mode: multiply;
+            isolation: auto;
         }
 
         .hero-headline {
