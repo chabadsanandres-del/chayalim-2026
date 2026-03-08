@@ -436,101 +436,47 @@
         }
         .sign-off strong { color: rgba(255,255,255,.8); }
 
-        /* CAROUSEL */
-        .carousel {
-            position: relative;
-            max-width: 100%;
-            margin: 32px 0 8px;
-            border-radius: 16px;
+        /* ARTICLE FIGURES */
+        .article-figure {
+            margin: 28px 0;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0,0,0,.35);
+            box-shadow: 0 6px 24px rgba(0,0,0,.22);
         }
 
-        .carousel-track {
-            display: flex;
-            transition: transform 0.45s cubic-bezier(.4,0,.2,1);
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .carousel-slide img {
+        .article-figure img {
             width: 100%;
-            height: 480px;
+            max-height: 440px;
             object-fit: cover;
             display: block;
         }
 
-        .carousel-slide .caption {
-            position: absolute;
-            bottom: 0;
-            right: 0; left: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,.82));
-            color: #fff;
-            font-style: normal;
-            text-align: right;
-            padding: 70px 28px 24px;
-            margin: 0;
-        }
-
-        .carousel-slide .caption-title {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 6px;
-            color: #fff;
-            line-height: 1.3;
-        }
-
-        .carousel-slide .caption-text {
-            font-size: 14px;
-            color: rgba(255,255,255,.88);
+        .article-figure figcaption {
+            padding: 13px 18px;
+            font-size: 13px;
             line-height: 1.6;
+            color: var(--text-mid);
+            background: #eef0e8;
+            border-top: 1px solid #d8ddd0;
         }
 
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,.45);
-            border: none;
-            color: #fff;
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background .2s;
-            z-index: 5;
-            line-height: 1;
+        .article-figure .fig-title {
+            display: block;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 2px;
         }
-        .carousel-btn:hover { background: rgba(0,0,0,.7); }
-        .carousel-btn.prev { right: 10px; }
-        .carousel-btn.next { left: 10px; }
 
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 7px;
-            margin-top: 10px;
+        .section-story .article-figure figcaption {
+            background: rgba(255,255,255,.07);
+            color: rgba(255,255,255,.62);
+            border-top: 1px solid rgba(255,255,255,.1);
         }
-        .carousel-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,.35);
-            cursor: pointer;
-            transition: background .2s;
-        }
-        .carousel-dot.active { background: var(--blue); }
 
-        /* dark-section dots */
-        .section-solution .carousel-dot { background: rgba(0,0,0,.25); }
-        .section-solution .carousel-dot.active { background: var(--olive); }
+        .section-story .article-figure .fig-title {
+            color: rgba(255,255,255,.9);
+        }
 
         /* SCROLL ANIMATIONS */
         .animate-in {
@@ -553,10 +499,9 @@
         }
 
         @media (max-width: 600px) {
-            .carousel-slide img { height: 260px; }
-            .carousel-slide .caption { padding: 40px 16px 16px; }
-            .carousel-slide .caption-title { font-size: 16px; }
-            .carousel-slide .caption-text { font-size: 12px; }
+            .article-figure img { max-height: 260px; }
+            .article-figure figcaption { font-size: 12px; padding: 10px 14px; }
+            .article-figure .fig-title { font-size: 13px; }
             section { padding: 60px 16px; }
             .container { padding: 0 16px; }
             .stats-row { grid-template-columns: 1fr; }
@@ -625,46 +570,37 @@
             <p>כשאני מגיע על האופנוע המקרטע שלי לבית הרפואה המיושן של האי ס. אנדרס, קולומביה, הלב שלי צונח. זירת מלחמה. שבעה צעירים שלנו, מטיילים, שרועים על מיטות וכיסאות גלגלים. דם, שברים, ופחד אימה בעיניים.</p>
         </div>
 
-        <div class="carousel" id="carousel-story">
-            <div class="carousel-track">
-                <div class="carousel-slide">
-                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%202.jpeg" alt="מצב החירום בבית הרפואה">
-                    <div class="caption">
-                        <div class="caption-title">השעה 2:00 בלילה, ס. אנדרס</div>
-                        <div class="caption-text">הגענו לבית הרפואה ומצאנו זירת מלחמה — שבעה צעירים ישראלים, פצועים ולבד בסוף העולם.</div>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%201.jpeg" alt="מירוץ נגד הזמן">
-                    <div class="caption">
-                        <div class="caption-title">מירוץ נגד הזמן</div>
-                        <div class="caption-text">שכרנו מטוס פרטי בלילה ועפנו עם זיו לבוגוטה. בין חיים למוות — שניות ספרו.</div>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%203.jpeg" alt="ברוך השם, זיו ניצלה">
-                    <div class="caption">
-                        <div class="caption-title">ברוך השם, זיו ניצלה</div>
-                        <div class="caption-text">שבועיים לא עזבנו אותה. לא עצמנו עין. הצלת חיים — זה מה שאנחנו עושים פה בסוף העולם.</div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-btn prev" onclick="carouselMove('carousel-story',-1)" aria-label="הקודם">&#8250;</button>
-            <button class="carousel-btn next" onclick="carouselMove('carousel-story',1)" aria-label="הבא">&#8249;</button>
-        </div>
-        <div class="carousel-dots" id="carousel-story-dots">
-            <div class="carousel-dot active" onclick="carouselGo('carousel-story',0)"></div>
-            <div class="carousel-dot" onclick="carouselGo('carousel-story',1)"></div>
-            <div class="carousel-dot" onclick="carouselGo('carousel-story',2)"></div>
-        </div>
+        <figure class="article-figure">
+            <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%202.jpeg" alt="בית הרפואה המיושן">
+            <figcaption>
+                <span class="fig-title">השעה 2:00 בלילה, ס. אנדרס</span>
+                בית הרפואה המיושן של האי — הזירה שאליה הגענו באותו לילה.
+            </figcaption>
+        </figure>
 
-        <div class="body-text" style="margin-top:32px;">
+        <div class="body-text">
             <p>זיו, בחורה צעירה שרק רצתה לראות קצת נופים, שוכבת שם עם <strong>כבד קרוע, במצב קריטי</strong>. בשבועיים הבאים אנחנו לא עוצמים עין. אנחנו נלחמים עליהם, מטיסים אותם במטוסים פרטיים לבירה כדי להציל את חייהם, ומחבקים הורים מבועתים שטסו חצי עולם.</p>
         </div>
 
-        <div class="body-text" style="margin-top:32px;">
+        <figure class="article-figure">
+            <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%201.jpeg" alt="מירוץ נגד הזמן">
+            <figcaption>
+                <span class="fig-title">מירוץ נגד הזמן</span>
+                שכרנו מטוס פרטי בלילה ועפנו עם זיו לבוגוטה. בין חיים למוות — שניות ספרו.
+            </figcaption>
+        </figure>
+
+        <div class="body-text">
             <p>ברוך השם, זיו ניצלה. אבל האמת היא, שההצלה שלנו כאן היא לא רק פיזית. <strong>היא בעיקר הצלת הנפש.</strong></p>
         </div>
+
+        <figure class="article-figure">
+            <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%AA%D7%90%D7%95%D7%A0%D7%94%203.jpeg" alt="ברוך השם, זיו ניצלה">
+            <figcaption>
+                <span class="fig-title">ברוך השם, זיו ניצלה</span>
+                שבועיים לא עזבנו אותה. לא עצמנו עין. הצלת חיים — זה מה שאנחנו עושים פה בסוף העולם.
+            </figcaption>
+        </figure>
     </div>
 </section>
 
@@ -676,36 +612,30 @@
         <h2 class="section-title">הם בורחים לקצה העולם כדי לשכוח.<br>אבל מה שהם באמת מחפשים - זה בית.</h2>
 
         <div class="body-text">
-            <p>תסתכלו על החבר'ה האלה. מלח הארץ. אחרי שירות צבאי ממושך, אחרי חודשים ארוכים של קרבות, פחד, ומראות ששום אדם צעיר לא אמור לראות - הם מחפשים לברוח.</p>
+            <p>תסתכלו על החבר'ה האלה. מלח הארץ. אחרי שירות צבאי ממושך, אחרי חודשים ארוכים של קרבות, פחד, ומראות ששום אדם צעיר לא אמור לראות — הם מחפשים לברוח.</p>
             <p>הם טסים לאי קריבי מבודד עם "ים של 7 צבעים", כדי לנסות למחוק את הזוועות. אבל כשהם מגיעים לכאן, בסוף העולם, הם מגלים שהנוף לא מספיק.</p>
+        </div>
+
+        <figure class="article-figure">
+            <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%90%D7%99%D7%A8%D7%95%D7%A2%201.jpeg" alt="סעודת שבת בבית חב&quot;ד">
+            <figcaption>
+                <span class="fig-title">שבת בסוף העולם</span>
+                מעל 250 חיילים סביב שולחן שבת אחד — רועשים, שמחים, בבית.
+            </figcaption>
+        </figure>
+
+        <div class="body-text">
             <p>הם זקוקים לחיבוק. הם צריכים צלחת אוכל חם שמזכירה את אמא. הם צריכים מישהו שלא ישפוט אותם. מישהו שיסתכל להם בעיניים ויגיד: <strong>"עברתם גיהנום, אבל עכשיו אתם בטוחים. הגעתם הביתה."</strong></p>
             <p>את הבית הזה, אנחנו בנינו עבורם. <strong>בית חב"ד ס. אנדרס הוא הרבה יותר מבית כנסת. הוא חדר מיון לנשמה.</strong></p>
         </div>
 
-        <div class="carousel" id="carousel-event">
-            <div class="carousel-track">
-                <div class="carousel-slide">
-                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%90%D7%99%D7%A8%D7%95%D7%A2%201.jpeg" alt="סעודת שבת בבית חב&quot;ד">
-                    <div class="caption">
-                        <div class="caption-title">שבת בסוף העולם</div>
-                        <div class="caption-text">מעל 250 חיילים סביב שולחן שבת אחד — רועשים, שמחים, בבית.</div>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%90%D7%99%D7%A8%D7%95%D7%A2%202.jpeg" alt="הילדים בפעילות">
-                    <div class="caption">
-                        <div class="caption-title">הילדים שמוותרים כדי שאתם לא תצטרכו</div>
-                        <div class="caption-text">הם גדלים בלי חיי חברה רגילים, מוותרים על ילדות שקטה — כדי שחיילים ימצאו בית.</div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-btn prev" onclick="carouselMove('carousel-event',-1)" aria-label="הקודם">&#8250;</button>
-            <button class="carousel-btn next" onclick="carouselMove('carousel-event',1)" aria-label="הבא">&#8249;</button>
-        </div>
-        <div class="carousel-dots" id="carousel-event-dots">
-            <div class="carousel-dot active" onclick="carouselGo('carousel-event',0)"></div>
-            <div class="carousel-dot" onclick="carouselGo('carousel-event',1)"></div>
-        </div>
+        <figure class="article-figure">
+            <img src="https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%90%D7%99%D7%A8%D7%95%D7%A2%202.jpeg" alt="הילדים בפעילות">
+            <figcaption>
+                <span class="fig-title">הילדים שמוותרים כדי שאתם לא תצטרכו</span>
+                הם גדלים בלי חיי חברה רגילים, מוותרים על ילדות שקטה — כדי שחיילים ימצאו בית.
+            </figcaption>
+        </figure>
 
         <div class="cta-center">
             <a href="https://pe4ch.com/ref/gAEbqP5j2che?lang=he" target="_blank" class="btn btn-olive btn-lg">
@@ -844,38 +774,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
-
-    // Carousel logic
-    const carouselState = {};
-
-    function carouselGo(id, index) {
-        const el = document.getElementById(id);
-        const track = el.querySelector('.carousel-track');
-        const slides = track.querySelectorAll('.carousel-slide');
-        const count = slides.length;
-        index = ((index % count) + count) % count;
-        carouselState[id] = index;
-        track.style.transform = 'translateX(' + (index * 100) + '%)';
-        document.querySelectorAll('#' + id + '-dots .carousel-dot').forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
-    }
-
-    function carouselMove(id, dir) {
-        const current = carouselState[id] || 0;
-        carouselGo(id, current - dir); // RTL: prev = next visually
-    }
-
-    // Auto-advance every 4s
-    ['carousel-story', 'carousel-event'].forEach(id => {
-        carouselState[id] = 0;
-        setInterval(() => {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const count = el.querySelectorAll('.carousel-slide').length;
-            carouselGo(id, ((carouselState[id] || 0) + 1) % count);
-        }, 4000);
-    });
 </script>
 </body>
 </html>
