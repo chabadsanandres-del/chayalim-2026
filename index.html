@@ -49,8 +49,8 @@
             background-image: url('https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%97%D7%99%D7%99%D7%9C%20%D7%95%D7%A8%D7%91.jpeg');
             background-size: cover;
             background-position: center center;
-            filter: blur(12px);
-            opacity: 0.55;
+            filter: blur(0px);
+            opacity: 0;
             z-index: -1;
         }
 
@@ -135,7 +135,7 @@
 
         /* HERO */
         .hero {
-            background: rgba(255,255,255,0.55);
+            background: transparent;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -222,12 +222,17 @@
         /* SOLUTION */
         .section-solution {
             background-image:
-                linear-gradient(rgba(242,244,234,0.80), rgba(242,244,234,0.80)),
+                linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)),
                 url('https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%97%D7%99%D7%91%D7%95%D7%A7%20%D7%92%D7%91%D7%A8%D7%99.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            color: #fff;
         }
+        .section-solution .eyebrow { color: var(--blue); }
+        .section-solution .section-title { color: #fff; }
+        .section-solution .body-text { color: rgba(255,255,255,0.88); }
+        .section-solution .pull-quote { color: #fff; border-color: var(--blue); }
         @supports (-webkit-touch-callout: none) {
             .section-solution {
                 background-attachment: scroll;
