@@ -30,27 +30,17 @@
             direction: rtl;
             color: var(--text-dark);
             line-height: 1.7;
-            background-color: transparent;
+            background-color: #fff;
         }
 
-        /* Background image on html — needed for mix-blend-mode support */
-        html {
-            background-image: url('https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%97%D7%99%D7%99%D7%9C%20%D7%95%D7%A8%D7%91.jpeg');
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-        }
-
-        /* Blurred frosted overlay — image shows through but soft and muted */
+        /* Fixed background that works on iOS Safari */
         body::before {
             content: '';
             position: fixed;
-            inset: -20px;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%97%D7%99%D7%99%D7%9C%20%D7%95%D7%A8%D7%91.jpeg');
             background-size: cover;
             background-position: center center;
-            filter: blur(0px);
-            opacity: 0;
             z-index: -1;
         }
 
@@ -135,7 +125,7 @@
 
         /* HERO */
         .hero {
-            background: transparent;
+            background: rgba(255,255,255,0.82);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -222,17 +212,12 @@
         /* SOLUTION */
         .section-solution {
             background-image:
-                linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)),
+                linear-gradient(rgba(242,244,234,0.80), rgba(242,244,234,0.80)),
                 url('https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%97%D7%99%D7%91%D7%95%D7%A7%20%D7%92%D7%91%D7%A8%D7%99.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #fff;
         }
-        .section-solution .eyebrow { color: var(--blue); }
-        .section-solution .section-title { color: #fff; }
-        .section-solution .body-text { color: rgba(255,255,255,0.88); }
-        .section-solution .pull-quote { color: #fff; border-color: var(--blue); }
         @supports (-webkit-touch-callout: none) {
             .section-solution {
                 background-attachment: scroll;
@@ -269,7 +254,7 @@
 
         /* SOCIAL PROOF */
         .section-proof {
-            background: rgba(255,255,255,0.55);
+            background: rgba(255,255,255,0.82);
             padding: 80px 0;
             text-align: center;
         }
@@ -310,7 +295,7 @@
         }
 
         .progress-block {
-            background: rgba(255,255,255,0.60);
+            background: rgba(255,255,255,0.92);
             border-radius: 18px;
             padding: 32px 36px;
             margin-top: 56px;
@@ -348,7 +333,7 @@
         }
 
         .testimonial-card {
-            background: rgba(230,247,252,0.60);
+            background: rgba(230,247,252,0.92);
             border-right: 5px solid var(--blue);
             border-radius: 16px;
             padding: 32px 36px;
