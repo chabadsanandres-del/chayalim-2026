@@ -257,8 +257,8 @@
 
         .stats-row {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
             margin: 48px 0;
         }
 
@@ -398,8 +398,12 @@
             font-weight: 700;
             color: var(--blue-dark);
         }
+        @media (max-width: 1100px) {
+            .stats-row { grid-template-columns: repeat(3, 1fr); }
+        }
         @media (max-width: 900px) {
             .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 600px) {
             .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -742,20 +746,28 @@
 <section class="section-proof">
     <div class="container">
         <div class="eyebrow">התוצאות בשטח</div>
-        <h2 class="section-title">בשנה החולפת ראינו פירות מדהימים לעשייה שלנו</h2>
+        <h2 class="section-title">5 שנים של עשייה אמיתית — המספרים מדברים בעד עצמם</h2>
 
         <div class="stats-row">
             <div class="stat-card">
-                <div class="stat-number">6,000+</div>
-                <div class="stat-label">מטיילים וחיילים שמצאו אצלנו אוכל חם ואוזן קשבת</div>
+                <div class="stat-number">15,600+</div>
+                <div class="stat-label">לוחמים ומטיילים שזכו לבית חם ומחבק בקצה העולם במהלך 5 השנים האחרונות</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">25</div>
-                <div class="stat-label">משפ��ות יהודיות מקומיות שחזרו ליהדותן</div>
+                <div class="stat-number">31,200</div>
+                <div class="stat-label">סעודות ביתיות שהוגשו באהבה ובשפע, ונתנו טעם של בית וביטחון לכל לוחם ולוחמת</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">18</div>
-                <div class="stat-label">מצבי הצלת חיים בסוף העולם</div>
+                <div class="stat-number">260</div>
+                <div class="stat-label">שבתות רצופות שבהן האור בבית חב"ד לא כבה מעולם, שבוע אחר שבוע, שנה אחר שנה</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5,000+</div>
+                <div class="stat-label">רגעי חיבור של הנחת תפילין, שיחות נפש וייעוץ רגשי ללוחמים משוחררים ונופשים</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">מענה לכל צורך — מעזרה רפואית ועד איתור וסיוע במצבי חירום עבור המטיילים והוריהם בארץ</div>
             </div>
         </div>
 
