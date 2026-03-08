@@ -30,11 +30,18 @@
             direction: rtl;
             color: var(--text-dark);
             line-height: 1.7;
+            background-color: #fff;
+        }
+
+        /* Fixed background that works on iOS Safari */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('https://raw.githubusercontent.com/chabadsanandres-del/landing-page-pesach2026/main/%D7%97%D7%99%D7%99%D7%9C%20%D7%95%D7%A8%D7%91.jpeg');
-            background-attachment: fixed;
             background-size: cover;
             background-position: center center;
-            background-color: #fff;
+            z-index: -1;
         }
 
         img { display: block; max-width: 100%; }
@@ -518,12 +525,6 @@
             transform: translateX(0);
         }
 
-        /* iOS Safari fix: background-attachment: fixed is broken on iOS */
-        @supports (-webkit-touch-callout: none) {
-            body { background-attachment: scroll; }
-            .section-solution { background-attachment: scroll; }
-        }
-
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-logo { width: 240px; }
@@ -534,6 +535,8 @@
         }
 
         @media (max-width: 600px) {
+            .carousel { max-width: 100%; }
+            .carousel-slide img { max-height: 220px; }
             section { padding: 60px 16px; }
             .container { padding: 0 16px; }
             .stats-row { grid-template-columns: 1fr; }
