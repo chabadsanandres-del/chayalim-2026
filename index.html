@@ -518,6 +518,12 @@
             transform: translateX(0);
         }
 
+        /* iOS Safari fix: background-attachment: fixed is broken on iOS */
+        @supports (-webkit-touch-callout: none) {
+            body { background-attachment: scroll; }
+            .section-solution { background-attachment: scroll; }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-logo { width: 240px; }
